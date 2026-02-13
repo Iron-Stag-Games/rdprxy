@@ -112,8 +112,8 @@ server.on('request', (req, res) => {
 					}
 				}
 				res.writeHead(403, {'Content-Type': 'text/plain'})
-				res.end('Host not whitelisted')
-				console.error('Host not whitelisted')
+				res.end(`Host ${requestedHost} not whitelisted`)
+				console.error(`Host ${requestedHost} not whitelisted`)
 			} else {
 				res.writeHead(403, {'Content-Type': 'text/plain'})
 				res.end('Target is required')
