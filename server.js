@@ -74,6 +74,7 @@ httpProxy.on('error', onProxyError)
 httpProxy.on('proxyReq', onProxyReq)
 
 const doProxy = (target, proto, req, res) => {
+	req.url = req.url.replace('%20', '?')
 	var options = {
 		target: proto + '://' + target.host
 	}
